@@ -154,8 +154,10 @@
       "properties": {
         "status": {
           "type": "string",
+          "description": "ユーザー向け表示: realized=できた / mostly_realized=だいたいできた / partial=一部できた / research=研究中 / not_yet=まだ / physically_hard=たぶん無理",
           "enum": [
             "realized",
+            "mostly_realized",
             "partial",
             "research",
             "not_yet",
