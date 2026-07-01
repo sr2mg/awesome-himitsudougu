@@ -8,7 +8,7 @@ Issue Formから提案すると、GitHub Actionsがこの形式のMarkdownを作
 
 ## Issue Formから提案する
 
-GitHubの画面だけで参加できます。
+GitHubの画面だけで参加できます。直接開く場合は [技術対応の提案フォーム](https://github.com/sr2mg/awesome-himitsudougu/issues/new?template=technology-claim.yml) を使ってください。
 
 1. リポジトリ上部の **Issues** タブを開く
 2. **New issue** をクリックする

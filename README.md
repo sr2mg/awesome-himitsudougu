@@ -138,7 +138,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\generate-gadget-stub
 
 ## 参加するには
 
-いちばん簡単な参加方法は、GitHub Issue Formから「この道具はこの技術に近いと思う」と提案することです。
+いちばん簡単な参加方法は、[技術対応の提案フォーム](https://github.com/sr2mg/awesome-himitsudougu/issues/new?template=technology-claim.yml) から「この道具はこの技術に近いと思う」と提案することです。
 
 1. GitHubリポジトリ上部の **Issues** タブを開く
 2. **New issue** をクリックする
