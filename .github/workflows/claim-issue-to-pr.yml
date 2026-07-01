@@ -1,0 +1,81 @@
+name: Create claim PR from issue
+
+on:
+  issues:
+    types:
+      - opened
+      - edited
+      - reopened
+      - labeled
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Issue number to convert
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: claim-issue-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: true
+
+jobs:
+  create-pr:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'technology-claim') || startsWith(github.event.issue.title, '[claim]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate claim markdown
+        id: claim
+        run: node scripts/issue-to-claim.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+
+      - name: Commit claim markdown
+        id: commit
+        run: |
+          branch="${{ steps.claim.outputs.branch }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add "${{ steps.claim.outputs.claim_path }}"
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Add claim from issue #${{ steps.claim.outputs.issue_number }}"
+            git push --force-with-lease origin "$branch"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.claim.outputs.branch }}
+          ISSUE_NUMBER: ${{ steps.claim.outputs.issue_number }}
+          CLAIM_PATH: ${{ steps.claim.outputs.claim_path }}
+          PR_TITLE: ${{ steps.claim.outputs.pr_title }}
+          PR_BODY: ${{ steps.claim.outputs.pr_body }}
+        run: |
+          pr_number="$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')"
+          if [ -z "$pr_number" ]; then
+            pr_url="$(gh pr create --head "$BRANCH" --base main --title "$PR_TITLE" --body "$PR_BODY")"
+            gh issue comment "$ISSUE_NUMBER" --body "claim Markdownを作ってPRにしました: $pr_url"
+          else
+            gh pr edit "$pr_number" --title "$PR_TITLE" --body "$PR_BODY"
+            gh issue comment "$ISSUE_NUMBER" --body "claim MarkdownのPRを更新しました: #$pr_number ($CLAIM_PATH)"
+          fi
+

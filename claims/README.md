@@ -4,7 +4,17 @@
 
 JSONを直接編集する必要はありません。GitHub上でMarkdownを開き、編集してください。
 
+Issue Formから提案すると、GitHub Actionsがこの形式のMarkdownを作り、Pull Requestを自動作成します。
+
 ## 書き方
+
+Issueから提案する場合:
+
+1. GitHubの Issues で「技術対応の提案」を選ぶ
+2. フォームを埋める
+3. 自動作成されたPull Requestを確認する
+
+直接Markdownを書く場合:
 
 1. `_template.md` をコピーする
 2. ファイル名を道具IDにする
@@ -32,4 +42,3 @@ claims/takekoputa.md
 | 評価しない | 現実技術との対応を問うのが不自然 |
 
 迷った場合は `docs/realization-status.md` を参照してください。
-

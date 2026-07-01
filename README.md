@@ -148,4 +148,6 @@ claims/
 
 JSONを直接編集する必要はありません。GitHub上でMarkdownを開いて、近い技術、理由、根拠URLを追記します。
 
+GitHub Issue Formから提案すると、GitHub ActionsがMarkdownファイルを生成し、Pull Requestを自動作成します。
+
 詳細は `claims/README.md` を参照してください。
