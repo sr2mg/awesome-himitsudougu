@@ -70,12 +70,32 @@ jobs:
           PR_TITLE: ${{ steps.claim.outputs.pr_title }}
           PR_BODY: ${{ steps.claim.outputs.pr_body }}
         run: |
-          pr_number="$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')"
+          pr_number="$(gh pr list --head "$BRANCH" --json number --jq '.[0].number' || true)"
           if [ -z "$pr_number" ]; then
-            pr_url="$(gh pr create --head "$BRANCH" --base main --title "$PR_TITLE" --body "$PR_BODY")"
+            if ! pr_url="$(gh pr create --head "$BRANCH" --base main --title "$PR_TITLE" --body "$PR_BODY" 2> pr-create-error.txt)"; then
+              compare_url="https://github.com/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
+              {
+                echo "claim Markdownのブランチは作成できましたが、GitHub Actionsの権限設定によりPRの自動作成はできませんでした。"
+                echo ""
+                echo "手動でPRを作る場合: $compare_url"
+                echo ""
+                echo "次回から自動作成するには、リポジトリの Settings > Actions > General > Workflow permissions で Allow GitHub Actions to create and approve pull requests を有効にしてください。"
+                echo ""
+                echo "対象ファイル: \`$CLAIM_PATH\`"
+                echo ""
+                echo "<details><summary>エラー</summary>"
+                echo ""
+                echo '```txt'
+                cat pr-create-error.txt
+                echo '```'
+                echo ""
+                echo "</details>"
+              } > pr-create-comment.md
+              gh issue comment "$ISSUE_NUMBER" --body-file pr-create-comment.md
+              exit 0
+            fi
             gh issue comment "$ISSUE_NUMBER" --body "claim Markdownを作ってPRにしました: $pr_url"
           else
             gh pr edit "$pr_number" --title "$PR_TITLE" --body "$PR_BODY"
             gh issue comment "$ISSUE_NUMBER" --body "claim MarkdownのPRを更新しました: #$pr_number ($CLAIM_PATH)"
           fi
-
