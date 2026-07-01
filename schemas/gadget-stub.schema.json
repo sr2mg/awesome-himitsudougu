@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/gadget-stub.schema.json",
+  "title": "Gadget Stub",
+  "description": "Wikipediaなどの抽出元から機械的に取り出した、未判断の道具候補。",
+  "type": "object",
+  "required": [
+    "stub_id",
+    "record_id",
+    "name",
+    "raw_heading",
+    "source",
+    "position",
+    "kind",
+    "redirect_to",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "stub_id": {
+      "type": "string",
+      "description": "抽出元内で一意な一時ID。正規レコードのidではない。",
+      "pattern": "^[a-z0-9][a-z0-9._:-]*$"
+    },
+    "record_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "名寄せ後に対応する正規レコードID。不明または未処理ならnull。",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "抽出元に現れた見出しまたはリンク表示名。"
+    },
+    "raw_heading": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "見出し文字列。リンクのみから抽出した場合はnull。"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "site_name",
+        "page_id",
+        "page_title",
+        "page_url",
+        "page_kind",
+        "group",
+        "label",
+        "section_anchor"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "site_name": {
+          "type": "string"
+        },
+        "page_id": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "page_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "page_kind": {
+          "type": "string",
+          "enum": [
+            "individual_article",
+            "index_page"
+          ]
+        },
+        "group": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "section_anchor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "position": {
+      "type": "object",
+      "required": [
+        "page_order",
+        "item_order"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "page_order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "item_order": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "candidate",
+        "redirect",
+        "duplicate_candidate",
+        "non_entry",
+        "unknown"
+      ],
+      "description": "機械抽出時点での扱い。道具性判定ではない。"
+    },
+    "redirect_to": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "参照先や統合先の候補名。該当しない場合はnull。"
+    },
+    "notes": {
+      "type": "string",
+      "description": "抽出時の機械的な注意点。"
+    }
+  }
+}

@@ -1,0 +1,536 @@
+{
+  "source_name": "Japanese Wikipedia",
+  "scope": "藤子・F・不二雄の著作物に登場するひみつ道具一覧を起点にした初期収録対象",
+  "license_note": "Wikipedia text is CC BY-SA. Use these URLs as sources; do not copy descriptions verbatim into dataset records.",
+  "individual_articles": [
+    {
+      "name": "石ころぼうし",
+      "url": "https://ja.wikipedia.org/wiki/石ころぼうし",
+      "kind": "individual_article",
+      "page_id": "jawp:石ころぼうし",
+      "page_title": "石ころぼうし"
+    },
+    {
+      "name": "着せかえカメラ",
+      "url": "https://ja.wikipedia.org/wiki/着せかえカメラ",
+      "kind": "individual_article",
+      "page_id": "jawp:着せかえカメラ",
+      "page_title": "着せかえカメラ"
+    },
+    {
+      "name": "空気砲",
+      "url": "https://ja.wikipedia.org/wiki/空気砲_(ドラえもん)",
+      "kind": "individual_article",
+      "page_id": "jawp:空気砲_(ドラえもん)",
+      "page_title": "空気砲_(ドラえもん)"
+    },
+    {
+      "name": "ショックガン",
+      "url": "https://ja.wikipedia.org/wiki/ショックガン",
+      "kind": "individual_article",
+      "page_id": "jawp:ショックガン",
+      "page_title": "ショックガン"
+    },
+    {
+      "name": "スモールライト",
+      "url": "https://ja.wikipedia.org/wiki/スモールライト",
+      "kind": "individual_article",
+      "page_id": "jawp:スモールライト",
+      "page_title": "スモールライト"
+    },
+    {
+      "name": "タイムふろしき",
+      "url": "https://ja.wikipedia.org/wiki/タイムふろしき",
+      "kind": "individual_article",
+      "page_id": "jawp:タイムふろしき",
+      "page_title": "タイムふろしき"
+    },
+    {
+      "name": "タイムマシン",
+      "url": "https://ja.wikipedia.org/wiki/タイムマシン_(ドラえもん)",
+      "kind": "individual_article",
+      "page_id": "jawp:タイムマシン_(ドラえもん)",
+      "page_title": "タイムマシン_(ドラえもん)"
+    },
+    {
+      "name": "タケコプター",
+      "url": "https://ja.wikipedia.org/wiki/タケコプター",
+      "kind": "individual_article",
+      "page_id": "jawp:タケコプター",
+      "page_title": "タケコプター"
+    },
+    {
+      "name": "通りぬけフープ",
+      "url": "https://ja.wikipedia.org/wiki/通りぬけフープ",
+      "kind": "individual_article",
+      "page_id": "jawp:通りぬけフープ",
+      "page_title": "通りぬけフープ"
+    },
+    {
+      "name": "どこでもドア",
+      "url": "https://ja.wikipedia.org/wiki/どこでもドア",
+      "kind": "individual_article",
+      "page_id": "jawp:どこでもドア",
+      "page_title": "どこでもドア"
+    },
+    {
+      "name": "とりよせバッグ",
+      "url": "https://ja.wikipedia.org/wiki/とりよせバッグ",
+      "kind": "individual_article",
+      "page_id": "jawp:とりよせバッグ",
+      "page_title": "とりよせバッグ"
+    },
+    {
+      "name": "ヒラリマント",
+      "url": "https://ja.wikipedia.org/wiki/ヒラリマント",
+      "kind": "individual_article",
+      "page_id": "jawp:ヒラリマント",
+      "page_title": "ヒラリマント"
+    },
+    {
+      "name": "ほんやくコンニャク",
+      "url": "https://ja.wikipedia.org/wiki/ほんやくコンニャク",
+      "kind": "individual_article",
+      "page_id": "jawp:ほんやくコンニャク",
+      "page_title": "ほんやくコンニャク"
+    },
+    {
+      "name": "ミニドラ",
+      "url": "https://ja.wikipedia.org/wiki/ミニドラ",
+      "kind": "individual_article",
+      "page_id": "jawp:ミニドラ",
+      "page_title": "ミニドラ"
+    },
+    {
+      "name": "もしもボックス",
+      "url": "https://ja.wikipedia.org/wiki/もしもボックス",
+      "kind": "individual_article",
+      "page_id": "jawp:もしもボックス",
+      "page_title": "もしもボックス"
+    },
+    {
+      "name": "桃太郎印のきびだんご",
+      "url": "https://ja.wikipedia.org/wiki/桃太郎印のきびだんご",
+      "kind": "individual_article",
+      "page_id": "jawp:桃太郎印のきびだんご",
+      "page_title": "桃太郎印のきびだんご"
+    },
+    {
+      "name": "四次元ポケット",
+      "url": "https://ja.wikipedia.org/wiki/四次元ポケット",
+      "kind": "individual_article",
+      "page_id": "jawp:四次元ポケット",
+      "page_title": "四次元ポケット"
+    }
+  ],
+  "index_pages": [
+    {
+      "group": "あ行",
+      "label": "ああ-あと",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ああ-あと)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ああ-あと)",
+      "page_title": "ドラえもんのひみつ道具_(ああ-あと)"
+    },
+    {
+      "group": "あ行",
+      "label": "あな-あん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(あな-あん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(あな-あん)",
+      "page_title": "ドラえもんのひみつ道具_(あな-あん)"
+    },
+    {
+      "group": "あ行",
+      "label": "いあ-いと",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(いあ-いと)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(いあ-いと)",
+      "page_title": "ドラえもんのひみつ道具_(いあ-いと)"
+    },
+    {
+      "group": "あ行",
+      "label": "いな-いん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(いな-いん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(いな-いん)",
+      "page_title": "ドラえもんのひみつ道具_(いな-いん)"
+    },
+    {
+      "group": "あ行",
+      "label": "うあ-うと",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(うあ-うと)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(うあ-うと)",
+      "page_title": "ドラえもんのひみつ道具_(うあ-うと)"
+    },
+    {
+      "group": "あ行",
+      "label": "うな-うん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(うな-うん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(うな-うん)",
+      "page_title": "ドラえもんのひみつ道具_(うな-うん)"
+    },
+    {
+      "group": "あ行",
+      "label": "え",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(え)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(え)",
+      "page_title": "ドラえもんのひみつ道具_(え)"
+    },
+    {
+      "group": "あ行",
+      "label": "おあ-おこ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(おあ-おこ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(おあ-おこ)",
+      "page_title": "ドラえもんのひみつ道具_(おあ-おこ)"
+    },
+    {
+      "group": "あ行",
+      "label": "おさ-おの",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(おさ-おの)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(おさ-おの)",
+      "page_title": "ドラえもんのひみつ道具_(おさ-おの)"
+    },
+    {
+      "group": "あ行",
+      "label": "おは-おん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(おは-おん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(おは-おん)",
+      "page_title": "ドラえもんのひみつ道具_(おは-おん)"
+    },
+    {
+      "group": "か行",
+      "label": "かあ-かそ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(かあ-かそ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(かあ-かそ)",
+      "page_title": "ドラえもんのひみつ道具_(かあ-かそ)"
+    },
+    {
+      "group": "か行",
+      "label": "かた-かほ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(かた-かほ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(かた-かほ)",
+      "page_title": "ドラえもんのひみつ道具_(かた-かほ)"
+    },
+    {
+      "group": "か行",
+      "label": "かま-かん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(かま-かん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(かま-かん)",
+      "page_title": "ドラえもんのひみつ道具_(かま-かん)"
+    },
+    {
+      "group": "か行",
+      "label": "きあ-きも",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(きあ-きも)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(きあ-きも)",
+      "page_title": "ドラえもんのひみつ道具_(きあ-きも)"
+    },
+    {
+      "group": "か行",
+      "label": "きや-きん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(きや-きん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(きや-きん)",
+      "page_title": "ドラえもんのひみつ道具_(きや-きん)"
+    },
+    {
+      "group": "か行",
+      "label": "くあ-くと",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(くあ-くと)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(くあ-くと)",
+      "page_title": "ドラえもんのひみつ道具_(くあ-くと)"
+    },
+    {
+      "group": "か行",
+      "label": "くな-くん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(くな-くん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(くな-くん)",
+      "page_title": "ドラえもんのひみつ道具_(くな-くん)"
+    },
+    {
+      "group": "か行",
+      "label": "け",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(け)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(け)",
+      "page_title": "ドラえもんのひみつ道具_(け)"
+    },
+    {
+      "group": "か行",
+      "label": "こ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(こ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(こ)",
+      "page_title": "ドラえもんのひみつ道具_(こ)"
+    },
+    {
+      "group": "さ行",
+      "label": "さ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(さ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(さ)",
+      "page_title": "ドラえもんのひみつ道具_(さ)"
+    },
+    {
+      "group": "さ行",
+      "label": "しあ-しの",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(しあ-しの)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(しあ-しの)",
+      "page_title": "ドラえもんのひみつ道具_(しあ-しの)"
+    },
+    {
+      "group": "さ行",
+      "label": "しは-しん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(しは-しん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(しは-しん)",
+      "page_title": "ドラえもんのひみつ道具_(しは-しん)"
+    },
+    {
+      "group": "さ行",
+      "label": "す",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(す)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(す)",
+      "page_title": "ドラえもんのひみつ道具_(す)"
+    },
+    {
+      "group": "さ行",
+      "label": "せ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(せ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(せ)",
+      "page_title": "ドラえもんのひみつ道具_(せ)"
+    },
+    {
+      "group": "さ行",
+      "label": "そ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(そ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(そ)",
+      "page_title": "ドラえもんのひみつ道具_(そ)"
+    },
+    {
+      "group": "た行",
+      "label": "たあ-たお",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(たあ-たお)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(たあ-たお)",
+      "page_title": "ドラえもんのひみつ道具_(たあ-たお)"
+    },
+    {
+      "group": "た行",
+      "label": "たか-たん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(たか-たん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(たか-たん)",
+      "page_title": "ドラえもんのひみつ道具_(たか-たん)"
+    },
+    {
+      "group": "た行",
+      "label": "ち",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ち)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ち)",
+      "page_title": "ドラえもんのひみつ道具_(ち)"
+    },
+    {
+      "group": "た行",
+      "label": "つ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(つ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(つ)",
+      "page_title": "ドラえもんのひみつ道具_(つ)"
+    },
+    {
+      "group": "た行",
+      "label": "て",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(て)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(て)",
+      "page_title": "ドラえもんのひみつ道具_(て)"
+    },
+    {
+      "group": "た行",
+      "label": "とあ-とこ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(とあ-とこ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(とあ-とこ)",
+      "page_title": "ドラえもんのひみつ道具_(とあ-とこ)"
+    },
+    {
+      "group": "た行",
+      "label": "とさ-とん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(とさ-とん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(とさ-とん)",
+      "page_title": "ドラえもんのひみつ道具_(とさ-とん)"
+    },
+    {
+      "group": "な行",
+      "label": "な",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(な)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(な)",
+      "page_title": "ドラえもんのひみつ道具_(な)"
+    },
+    {
+      "group": "な行",
+      "label": "に",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(に)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(に)",
+      "page_title": "ドラえもんのひみつ道具_(に)"
+    },
+    {
+      "group": "な行",
+      "label": "ぬ-の",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ぬ-の)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ぬ-の)",
+      "page_title": "ドラえもんのひみつ道具_(ぬ-の)"
+    },
+    {
+      "group": "は行",
+      "label": "はあ-はと",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(はあ-はと)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(はあ-はと)",
+      "page_title": "ドラえもんのひみつ道具_(はあ-はと)"
+    },
+    {
+      "group": "は行",
+      "label": "はな-はん",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(はな-はん)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(はな-はん)",
+      "page_title": "ドラえもんのひみつ道具_(はな-はん)"
+    },
+    {
+      "group": "は行",
+      "label": "ひ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ひ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ひ)",
+      "page_title": "ドラえもんのひみつ道具_(ひ)"
+    },
+    {
+      "group": "は行",
+      "label": "ふ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ふ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ふ)",
+      "page_title": "ドラえもんのひみつ道具_(ふ)"
+    },
+    {
+      "group": "は行",
+      "label": "へ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(へ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(へ)",
+      "page_title": "ドラえもんのひみつ道具_(へ)"
+    },
+    {
+      "group": "は行",
+      "label": "ほ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ほ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ほ)",
+      "page_title": "ドラえもんのひみつ道具_(ほ)"
+    },
+    {
+      "group": "ま行",
+      "label": "ま",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ま)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ま)",
+      "page_title": "ドラえもんのひみつ道具_(ま)"
+    },
+    {
+      "group": "ま行",
+      "label": "み",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(み)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(み)",
+      "page_title": "ドラえもんのひみつ道具_(み)"
+    },
+    {
+      "group": "ま行",
+      "label": "む",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(む)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(む)",
+      "page_title": "ドラえもんのひみつ道具_(む)"
+    },
+    {
+      "group": "ま行",
+      "label": "め-も",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(め-も)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(め-も)",
+      "page_title": "ドラえもんのひみつ道具_(め-も)"
+    },
+    {
+      "group": "や行",
+      "label": "や",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(や)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(や)",
+      "page_title": "ドラえもんのひみつ道具_(や)"
+    },
+    {
+      "group": "や行",
+      "label": "ゆ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ゆ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ゆ)",
+      "page_title": "ドラえもんのひみつ道具_(ゆ)"
+    },
+    {
+      "group": "や行",
+      "label": "よ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(よ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(よ)",
+      "page_title": "ドラえもんのひみつ道具_(よ)"
+    },
+    {
+      "group": "ら行",
+      "label": "ら-り",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(ら-り)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(ら-り)",
+      "page_title": "ドラえもんのひみつ道具_(ら-り)"
+    },
+    {
+      "group": "ら行",
+      "label": "る-ろ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(る-ろ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(る-ろ)",
+      "page_title": "ドラえもんのひみつ道具_(る-ろ)"
+    },
+    {
+      "group": "わ行",
+      "label": "わ",
+      "url": "https://ja.wikipedia.org/wiki/ドラえもんのひみつ道具_(わ)",
+      "kind": "index_page",
+      "page_id": "jawp:ドラえもんのひみつ道具_(わ)",
+      "page_title": "ドラえもんのひみつ道具_(わ)"
+    }
+  ]
+}

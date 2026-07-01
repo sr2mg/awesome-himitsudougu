@@ -1,0 +1,285 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/himitsudougu-record.schema.json",
+  "title": "Himitsudougu Record",
+  "description": "ひみつ道具1件を表す正規レコード。事実、道具性、実現度を分離して保持する。",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "yomi",
+    "aliases",
+    "description",
+    "provenance",
+    "gadgethood",
+    "evaluable",
+    "realization",
+    "sources",
+    "extraction_notes",
+    "review_flags"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "読み仮名を正規化した安定ID。名寄せ・重複判定のキー。",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "description": "正規名称。"
+    },
+    "yomi": {
+      "type": "string",
+      "description": "ひらがな読み。"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "variant_name",
+              "anime_rename",
+              "provisional_name",
+              "typo_in_source",
+              "redirect_name"
+            ]
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "機能の要約。原典をコピーせず、事実だけを独自の言葉で書く。"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "author_canon",
+        "first_appearance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "author_canon": {
+          "type": "string",
+          "enum": [
+            "fujiko_f",
+            "derivative",
+            "anime_original",
+            "unknown"
+          ]
+        },
+        "first_appearance": {
+          "type": "object",
+          "required": [
+            "work",
+            "medium",
+            "volume"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "work": {
+              "type": "string"
+            },
+            "medium": {
+              "type": "string",
+              "enum": [
+                "manga",
+                "daichohen",
+                "movie",
+                "anime",
+                "other",
+                "unknown"
+              ]
+            },
+            "volume": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "gadgethood": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "gadget",
+            "non_gadget",
+            "uncertain"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        }
+      }
+    },
+    "evaluable": {
+      "type": "boolean",
+      "description": "現実技術との対応を問える機能ならtrue。"
+    },
+    "realization": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "real_world",
+        "confidence",
+        "reason",
+        "evidence"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "realized",
+            "partial",
+            "research",
+            "not_yet",
+            "physically_hard"
+          ]
+        },
+        "real_world": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "url"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "minItems": 1
+    },
+    "extraction_notes": {
+      "type": "string"
+    },
+    "review_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "needs_human_review",
+          "possible_duplicate",
+          "source_conflict",
+          "description_copyright_risk",
+          "realization_needs_update"
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "gadgethood": {
+            "properties": {
+              "status": {
+                "const": "gadget"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "evaluable": {
+            "const": true
+          }
+        },
+        "required": [
+          "gadgethood",
+          "evaluable"
+        ]
+      },
+      "then": {
+        "properties": {
+          "realization": {
+            "type": "object"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "realization": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

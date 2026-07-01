@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/extract-records.schema.json",
+  "title": "Extract Record Dataset",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "records"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "./extract-record.schema.json"
+      }
+    }
+  }
+}
+

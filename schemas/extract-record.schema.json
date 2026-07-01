@@ -1,0 +1,134 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/extract-record.schema.json",
+  "title": "Extract Record",
+  "description": "パス1の事実抽出結果。道具性や実現度の判断を含めない。",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "yomi",
+    "aliases",
+    "description",
+    "provenance",
+    "sources",
+    "extraction_notes",
+    "review_flags"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "yomi": {
+      "type": "string"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "type"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "variant_name",
+              "anime_rename",
+              "provisional_name",
+              "typo_in_source",
+              "redirect_name"
+            ]
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "description": {
+      "type": "string"
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "author_canon",
+        "first_appearance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "author_canon": {
+          "type": "string",
+          "enum": [
+            "fujiko_f",
+            "derivative",
+            "anime_original",
+            "unknown"
+          ]
+        },
+        "first_appearance": {
+          "type": "object",
+          "required": [
+            "work",
+            "medium",
+            "volume"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "work": {
+              "type": "string"
+            },
+            "medium": {
+              "type": "string",
+              "enum": [
+                "manga",
+                "daichohen",
+                "movie",
+                "anime",
+                "other",
+                "unknown"
+              ]
+            },
+            "volume": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "minItems": 1
+    },
+    "extraction_notes": {
+      "type": "string"
+    },
+    "review_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "needs_human_review",
+          "possible_duplicate",
+          "source_conflict",
+          "description_copyright_risk"
+        ]
+      }
+    }
+  }
+}
+

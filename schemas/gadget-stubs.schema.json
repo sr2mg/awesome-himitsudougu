@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/gadget-stubs.schema.json",
+  "title": "Gadget Stub Dataset",
+  "type": "object",
+  "required": [
+    "generated_at",
+    "source_registry",
+    "stubs"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_registry": {
+      "type": "object",
+      "required": [
+        "path",
+        "schema",
+        "source_name"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "schema": {
+          "type": "string"
+        },
+        "source_name": {
+          "type": "string"
+        }
+      }
+    },
+    "stubs": {
+      "type": "array",
+      "items": {
+        "$ref": "./gadget-stub.schema.json"
+      }
+    }
+  }
+}

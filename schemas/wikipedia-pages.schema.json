@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/awesome-himitsudougu/schemas/wikipedia-pages.schema.json",
+  "title": "Wikipedia Page Registry",
+  "description": "初期抽出に使うWikipediaページ台帳。",
+  "type": "object",
+  "required": [
+    "source_name",
+    "scope",
+    "license_note",
+    "individual_articles",
+    "index_pages"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "source_name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "license_note": {
+      "type": "string"
+    },
+    "individual_articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "page_id",
+          "page_title",
+          "name",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "individual_article"
+          },
+          "page_id": {
+            "type": "string",
+            "description": "Stable source page identifier, usually based on the Wikipedia page title."
+          },
+          "page_title": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "index_pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "page_id",
+          "page_title",
+          "group",
+          "label",
+          "url"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "type": "string",
+            "const": "index_page"
+          },
+          "page_id": {
+            "type": "string",
+            "description": "Stable source page identifier, usually based on the Wikipedia page title."
+          },
+          "page_title": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  }
+}
