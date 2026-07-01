@@ -65,6 +65,49 @@ function sanitizeId(value) {
     .replace(/^-|-$/g, "");
 }
 
+function parseSelectedGadget(value) {
+  const match = String(value || "").match(/^(.*?)\s+\|\s+(jawp:[a-z0-9._:-]+)$/);
+  if (!match) {
+    return {
+      name: String(value || "").trim(),
+      stubId: "",
+    };
+  }
+
+  return {
+    name: match[1].trim(),
+    stubId: match[2].trim(),
+  };
+}
+
+async function findExistingClaimIdByName(name) {
+  let entries = [];
+  try {
+    entries = await fs.readdir("claims", { withFileTypes: true });
+  } catch {
+    return "";
+  }
+
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".md") || entry.name.startsWith("_")) {
+      continue;
+    }
+
+    const claimPath = path.join("claims", entry.name);
+    const text = await fs.readFile(claimPath, "utf8");
+    const idMatch = text.match(/^id:\s*(.+?)\s*$/m);
+    const nameMatch = text.match(/^name:\s*(.+?)\s*$/m);
+    const claimName = (nameMatch?.[1] || "").replace(/^"|"$/g, "").trim();
+    const claimId = (idMatch?.[1] || "").replace(/^"|"$/g, "").trim();
+
+    if (claimName === name && claimId) {
+      return claimId;
+    }
+  }
+
+  return "";
+}
+
 function escapeYaml(value) {
   const text = String(value ?? "").replace(/\r?\n/g, " ").trim();
   return JSON.stringify(text);
@@ -90,9 +133,15 @@ function appendOutput(name, value) {
 const issue = await loadIssue();
 const fields = parseIssueForm(issue.body || "");
 
-const gadgetName = fields["対象の道具名"] || "";
-const rawId = fields["道具ID"] || "";
-const gadgetId = sanitizeId(rawId);
+const selectedGadget = parseSelectedGadget(
+  fields["対象の道具（道具名 | 暫定ID）"] || fields["対象の道具"] || "",
+);
+const fallbackGadgetName = fields["対象の道具名"] || "";
+const fallbackGadgetId = sanitizeId(fields["道具ID"] || "");
+const gadgetName = selectedGadget.name || fallbackGadgetName;
+const stubId = selectedGadget.stubId;
+const existingClaimId = await findExistingClaimIdByName(gadgetName);
+const gadgetId = fallbackGadgetId || existingClaimId;
 const status = fields["どのくらい実現していると思いますか？"] || "";
 const confidence = fields["自信"] || "";
 const technologyName = fields["近い技術・製品・研究"] || "";
@@ -103,7 +152,7 @@ const notes = fields["メモ"] || "";
 
 const claimPath = gadgetId
   ? `claims/${gadgetId}.md`
-  : `claims/_inbox/issue-${issueNumber}.md`;
+  : `claims/_inbox/${sanitizeId(stubId) || `issue-${issueNumber}`}.md`;
 
 await fs.mkdir(path.dirname(claimPath), { recursive: true });
 
@@ -112,6 +161,7 @@ const notesText = notes || `Created from #${issueNumber}.`;
 
 const markdown = `---
 id: ${escapeYaml(gadgetId)}
+stub_id: ${escapeYaml(stubId)}
 name: ${escapeYaml(gadgetName)}
 status: ${escapeYaml(status)}
 confidence: ${escapeYaml(confidence)}

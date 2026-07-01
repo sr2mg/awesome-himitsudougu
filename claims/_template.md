@@ -1,5 +1,6 @@
 ---
 id:
+stub_id:
 name:
 status:
 confidence:
@@ -18,5 +19,4 @@ review_status: draft
 -
 
 ## メモ
-
 

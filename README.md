@@ -143,7 +143,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts\generate-gadget-stub
 1. GitHubリポジトリ上部の **Issues** タブを開く
 2. **New issue** をクリックする
 3. **技術対応の提案** を選ぶ
-4. フォームに、道具名、近い技術、実現度、理由、根拠URLを書く
+4. フォームで対象の道具を選び、近い技術、実現度、理由、根拠URLを書く
 5. **Submit new issue** をクリックする
 
 Issueを作ると、GitHub Actionsが `claims/` のMarkdownファイルを作り、Pull Requestを自動作成します。
@@ -154,7 +154,13 @@ Issue Form
   -> Pull Request
 ```
 
-道具IDが分からない場合は空欄で大丈夫です。その場合は `claims/_inbox/issue-<番号>.md` に入り、あとでPR上で整理できます。
+フォームの選択肢に含まれる `jawp:...` は、Wikipedia から抽出した時点の暫定IDです。既存の `claims/<id>.md` と同じ道具名が見つかればそこを更新し、まだ正規IDがないものは `claims/_inbox/` に入ります。
+
+Issue Form の道具選択肢は `data/gadget-stubs.json` から生成しています。候補を更新した後は、次を実行してフォームを再生成します。
+
+```powershell
+node scripts\generate-issue-form.mjs
+```
 
 ### 直接編集する場合
 
@@ -167,5 +173,7 @@ claims/
 ```
 
 JSONを直接編集する必要はありません。GitHub上でMarkdownを開いて、近い技術、理由、根拠URLを追記します。
+
+Pull Requestを作るときは、PRテンプレートに沿って対象の道具、近い技術、実現度を確認してください。
 
 詳細は `claims/README.md` を参照してください。
