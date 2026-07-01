@@ -8,14 +8,14 @@ body:
     id: gadget_name
     attributes:
       label: 対象の道具名
-      description: 例: 石ころぼうし
+      description: "例: 石ころぼうし"
     validations:
       required: true
   - type: input
     id: gadget_id
     attributes:
       label: 道具ID
-      description: 分かる場合だけ入力してください。例: ishikoro-boshi。空なら _inbox に入ります。
+      description: "分かる場合だけ入力してください。例: ishikoro-boshi。空なら _inbox に入ります。"
     validations:
       required: false
   - type: dropdown
@@ -46,7 +46,7 @@ body:
     id: technology_name
     attributes:
       label: 近い技術・製品・研究
-      description: 例: Google Translate, POCKETALK, adaptive camouflage
+      description: "例: Google Translate, POCKETALK, adaptive camouflage"
     validations:
       required: true
   - type: input
@@ -77,4 +77,3 @@ body:
       description: 迷っている点や補足があれば書いてください。
     validations:
       required: false
-
